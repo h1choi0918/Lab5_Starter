@@ -10,6 +10,7 @@ function init() {
   const sound = document.getElementById("volume");
   const audio = document.querySelector('.hidden');
   const btn = document.querySelector('button');
+  const jsConfetti = new JSConfetti()
 
   sel.addEventListener('change', (event) => {
     if (event.target.value == "air-horn") {
@@ -36,5 +37,8 @@ function init() {
 
   btn.addEventListener('click', (event) => {
     audio.play();
+    if (sel.value == "party-horn") {
+      jsConfetti.addConfetti()
+    }
   });
 }
